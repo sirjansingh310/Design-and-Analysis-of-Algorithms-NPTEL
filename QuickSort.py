@@ -1,4 +1,5 @@
 #quick sort in python
+#http://interactivepython.org/runestone/static/pythonds/SortSearch/TheQuickSort.html
 def swap(arr,i,j):
 	arr[i],arr[j]=arr[j],arr[i]  
 
