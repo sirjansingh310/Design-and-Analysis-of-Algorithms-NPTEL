@@ -1,10 +1,11 @@
 //heap sort program 
+//O(nlogn)
 import java.util.*;
 class HeapSort{
 	public static void buildHeap(int a[]){
 		int size = a.length;
 		for(int i=size/2-1;i>=0;i--){// leaf nodes already satisfy the heap property, so no need to fix them
-              heapify(a,i,size);// bottom up heapification.
+              heapify(a,i,size);// bottom up heapification.  heapify takes O(logn) time
 		}
 	}
 	public static void heapify(int a[],int i,int size){
