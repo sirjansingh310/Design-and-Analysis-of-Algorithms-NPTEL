@@ -55,7 +55,7 @@ class graph{
         nodeToHeap[heapToNode[j]]=temp;
 
     }
-    public void heapify(int i, int size){// fixing by going down
+    public void heapify(int i, int size){// fixing heap from root(i) to bottom
         int smallest=heap[i];
         int smallest_index=i;
         int leftChild=2*i+1; 
@@ -74,7 +74,7 @@ class graph{
             heapify(smallest_index,size);// Recursive call
         }
     }
-    public void updateHeap(int index,int update){// fixing by going up
+    public void updateHeap(int index,int update){// fixing by going up from i, only swaps with parent till fixed
         heap[index]=update;
         int parent=(index-1)/2;
         while(heap[parent]>heap[index]){
