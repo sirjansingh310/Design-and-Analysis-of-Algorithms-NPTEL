@@ -8,7 +8,7 @@ class HeapSort{
               heapify(a,i,size);// bottom up heapification.  heapify takes O(logn) time
 		}
 	}
-	public static void heapify(int a[],int i,int size){
+	public static void heapify(int a[],int i,int size){// fixing by going down, i as parent 
 		int leftChild = 2*i+1;
 		int rightChild = 2*i+2;
 		int parent = i;
