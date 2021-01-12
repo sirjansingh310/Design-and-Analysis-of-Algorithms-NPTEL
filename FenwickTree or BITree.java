@@ -1,5 +1,4 @@
-// https://www.youtube.com/watch?v=CWDQJGaN1gY
-// https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/
+/*package whatever //do not write package name here */
 
 import java.io.*;
 import java.util.*;
@@ -31,6 +30,10 @@ class BITree {
         return sum;
     }
     
+    public int getRangeSum(int start, int end) {
+        return getPrefixSum(end) - getPrefixSum(start - 1);
+    }
+    
     public void updateArray(int index, int newValue) {
         updateTree(index + 1, originalArray[index], newValue);
         originalArray[index] = newValue;
@@ -54,7 +57,7 @@ class BITree {
         return index - (index & -index);
     }
 }
-class Solution {
+class GFG {
 	public static void main (String[] args) {
 		BITree tree = new BITree(new int[]{1, 2, 3});
 		
@@ -62,11 +65,12 @@ class Solution {
 		System.out.println(tree.getPrefixSum(1));// 3
 		System.out.println(tree.getPrefixSum(0)); // 1
 		
-		tree.updateArray(2, 12);
+		tree.updateArray(2, 12);// arr-> 1, 2, 12
 		
 		System.out.println(tree.getPrefixSum(2)); // 15
 		System.out.println(tree.getPrefixSum(1));// 3
 		System.out.println(tree.getPrefixSum(0)); // 1
 		
+		System.out.println(tree.getRangeSum(1, 2));//14
 	}
 }
